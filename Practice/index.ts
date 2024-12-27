@@ -1,3 +1,5 @@
+// ------------------------------------------------------------------
+
 // let a: number | string;
 // a = "Hello";
 // a = 23;
@@ -73,3 +75,91 @@
 // console.log("Print----->> ",func.funcReturn(3,2))
 
 // ------------------------------------------------------------------
+
+// type FuncType = (...m: number[]) => number[];
+
+// const func: FuncType =(...m)=>{
+//     return m
+// }
+
+// ------------------------------------------------------------------
+
+// type themeMode= "Light" | "Dark"
+
+// const mode:themeMode = "asd"
+
+// ------------------------------------------------------------------
+
+// interface Person  {
+//   name: string;
+//   age: number;
+// }
+
+// const myObj : Person = {
+//     name: "Anirudh",
+//     age: 25,
+// }
+
+// const getData =(key : keyof Person) => {
+//     return myObj[key]
+// }
+
+// console.log(getData("age"))
+
+// ------------------------------------------------------------------
+
+// UTILITY TYPE
+
+// Partial<Type>
+
+// type User = {
+//   name: string;
+//   age: number;
+// };
+
+// type User2 = Partial<User>
+
+// Required<Type>
+
+// type User = {
+//   name?: string;
+//   age?: number;
+// };
+
+// type User2 = Required<User>
+
+// const user: User ={}
+// const user: User2 ={}
+
+// Readonly<Type>
+
+// type User = {
+//   name: string;
+//   age: number;
+// };
+
+// const user: Readonly<User> = {
+//   name: "Anirudh",
+//   age: 100,
+// };
+
+// user.name = "asd";
+
+
+// Record<Type>
+
+// type Age = {
+//   age: number;
+// };
+
+// type Name = "john" | "jane";
+
+// const user : Record<Name, Age> ={
+//     john:{
+//         age:100
+//     },
+//     jane:{
+//         age:100
+//     }
+// } 
+
