@@ -76,13 +76,13 @@
 // console.log(getData("age"))
 // ------------------------------------------------------------------
 // UTILITY TYPE
-// Partial<Type>
+// // Partial<Type>
 // type User = {
 //   name: string;
 //   age: number;
 // };
 // type User2 = Partial<User>
-// Required<Type>
+// // Required<Type>
 // type User = {
 //   name?: string;
 //   age?: number;
@@ -90,7 +90,7 @@
 // type User2 = Required<User>
 // const user: User ={}
 // const user: User2 ={}
-// Readonly<Type>
+// // Readonly<Type>
 // type User = {
 //   name: string;
 //   age: number;
@@ -100,7 +100,7 @@
 //   age: 100,
 // };
 // user.name = "asd";
-// Record<Type>
+// // Record<Type>
 // type Age = {
 //   age: number;
 // };
@@ -112,4 +112,52 @@
 //     jane:{
 //         age:100
 //     }
-// } 
+// }
+// // Pick<Type,Keys>
+// interface OrderInfo {
+//   readonly id: string;
+//   city: string;
+//   state: string;
+//   country: string;
+//   status: string;
+// }
+// type ShippingInfo = Pick<OrderInfo, "city" | "state" | "country">;
+// // Omit<Type,Keys>
+// type Random = Omit<OrderInfo, "city" | "state" | "country">;
+// // Exclude<Type, ExcludeUnion>
+// type MyUnion = string | number | boolean;
+// type Random = Exclude<MyUnion,number >;
+// // Extract<Type, Union>
+// type MyUnion = string | number | boolean;
+// type Random = Extract<MyUnion,number >;
+// // Parameters<Type>
+// const myfunc = (a:number, b:number) =>{
+//     console.log(a+b)
+// }
+// type Random = Parameters<typeof myfunc>
+// // ReturnType<Type>
+// const myfunc = (a:number, b:number) =>{
+//     console.log(a+b)
+// }
+// type Random = ReturnType<typeof myfunc>
+// ------------------------------------------------------------------
+// // Generics
+// type Person = {
+//   name: string;
+//   age: number;
+// };
+// const func = <T>(n: T): T => {
+//   return n;
+// };
+// const person1 : Person = {
+//     name: 'John',
+//     age: 30
+// }
+// const ans = func<Person>(person1)
+// ans.age
+// const arr: Array<number>=[]
+const func = (a, b) => {
+    return { a, b };
+};
+const ans = func(21, "Meow");
+console.log(ans.b);
