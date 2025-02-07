@@ -155,9 +155,52 @@
 // }
 // const ans = func<Person>(person1)
 // ans.age
+// -----------------------------
 // const arr: Array<number>=[]
-const func = (a, b) => {
-    return { a, b };
-};
-const ans = func(21, "Meow");
-console.log(ans.b);
+// const func = <T, U>(a: T, b: U): {a:T,b:U} => {
+//   return { a, b };
+// };
+// const ans = func<number,string>(21,"Meow")
+// console.log(ans.a)
+// -----------------------Extends (inheritance)
+// type Person = {
+//   name : string
+// }
+// type Person2 = {
+//   name : string,
+//   age: number
+// }
+// const func = <T, U extends T>(a: T, b: U): {a:T,b:U} => {
+//   return { a, b };
+// };
+// const ans = func<Person,Person2>({name:"Meow"},{name:"Ani", age:1})
+// console.log(ans.a)
+// ------------------------
+// type Week = {
+//   day: string;
+//   time: number;
+// };
+// const week: Week[] = [
+//   {
+//     day: "Mon",
+//     time: 1,
+//   },
+//   {
+//     day: "Tue",
+//     time: 2,
+//   },
+//   {
+//     day: "Wed",
+//     time: 3,
+//   },
+//   {
+//     day: "Thu",
+//     time: 4,
+//   },
+// ];
+// const filterWeek = <T, U extends keyof T>(arr: T[], property: U, value: T[U]): T[] => {
+//   return arr.filter(item => item[property] === value)
+//   // return arr.map(item => item[property] === value)
+// }
+// const filterWeekByDay = filterWeek(week, "day", "Tue")
+// console.log(filterWeekByDay)
